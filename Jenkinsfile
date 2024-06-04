@@ -17,16 +17,13 @@ pipeline {
                    npm run build
                    '''
             }
+	    steps {
+	        sh '''
+	           test -f build/index/html
+	           npm test
+	        '''
         }
-        stage('test') {
-            steps {
-                sh '''
-                   test -f build/index.html
-                   npm test
-                '''
-            }
-        }
+        
     }
 }
-
-
+}	
