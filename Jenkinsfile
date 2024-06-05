@@ -2,7 +2,7 @@
     agent any
     environment {
         NETLIFY_SITE_ID = 'bb6b34d0-da7d-4ecb-a611-ffa381e8ba09'
-        NETLIFY_AUTH_TOKEN = credential ('Netlify-token')
+        NETLIFY_AUTH_TOKEN = credentials('Netlify-token')
     }
     stages {
         stage('Build') {
@@ -54,5 +54,10 @@
                 '''
             }
         }       
+    }
+    post {
+     always {
+      junit 'jest-results/junit.xml'
+     }
     }
   }
