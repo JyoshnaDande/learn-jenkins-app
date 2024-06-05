@@ -2,8 +2,6 @@
     agent any
 
     stages {
-
-
         stage('Build') {
             agent {
                 docker {
@@ -22,8 +20,6 @@
                 '''
             }
         }
-        
-
         stage('Test') {
             agent {
                 docker {
@@ -52,9 +48,7 @@
                     node-modules/.bin/netlify --version
                 '''
             }
-        }
-
-        
+        }       
     }
 
     post {
