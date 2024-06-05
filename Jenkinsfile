@@ -55,11 +55,4 @@
             }
         }       
     }
-
-    post {
-        always {
-            junit 'jest-results/junit.xml'
-            
-        }
-    }
-}
+  }
